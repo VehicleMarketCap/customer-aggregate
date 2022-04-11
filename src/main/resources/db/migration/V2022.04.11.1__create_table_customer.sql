@@ -3,6 +3,6 @@ CREATE TABLE customer(
     name VARCHAR(36) NOT NULL,
     surname VARCHAR(36) NOT NULL,
     birthdate DATE NOT NULL,
-    phoneNumber VARCHAR(36) NOT NULL,
-    email VARCHAR(36) NOT NULL
+    phone_number VARCHAR(12) NOT NULL UNIQUE,
+    email VARCHAR(36) NOT NULL UNIQUE
 );

@@ -12,6 +12,7 @@ import org.mockito.Mock;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -37,7 +38,7 @@ public class CustomerServiceTest {
         given(customerMapper.fromDtoToEntity(receivedDto)).willReturn(expected);
         given(customerRepository.save(expected)).willReturn(expected);
 
-        Customer actual = customerService.create(receivedDto);
+        CustomerDto actual = customerService.create(receivedDto);
 
         assertThat(actual)
                 .isNotNull()
@@ -48,11 +49,11 @@ public class CustomerServiceTest {
 
     @Test
     public void getAll_whenCustomersExist_returnsAll() {
-        List<Customer> expected = Collections.singletonList(CustomerStubCreator.createCustomer());
+        List<CustomerDto> expected = Collections.singletonList(CustomerStubCreator.createCustomerDto());
 
-        given(customerRepository.findAll()).willReturn(expected);
+        given(customerRepository.findAll()).willReturn(Collections.singletonList(CustomerStubCreator.createCustomer()));
 
-        List<Customer> actual = customerService.getAll();
+        List<CustomerDto> actual = customerService.getAll();
 
         assertThat(actual).hasSameElementsAs(expected);
     }
@@ -61,7 +62,7 @@ public class CustomerServiceTest {
     public void getAll_whenCustomersDoesntExist_returnsEmptyList() {
         given(customerRepository.findAll()).willReturn(Collections.emptyList());
 
-        List<Customer> actual = customerService.getAll();
+        List<CustomerDto> actual = customerService.getAll();
 
         assertThat(actual).isEmpty();
     }

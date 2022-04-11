@@ -24,7 +24,7 @@ public class CustomerBuilder {
         return name;
     }
 
-    public CustomerBuilder setName(String name) {
+    public CustomerBuilder withName(String name) {
         this.name = name;
         return this;
     }
@@ -33,7 +33,7 @@ public class CustomerBuilder {
         return surname;
     }
 
-    public CustomerBuilder setSurname(String surname) {
+    public CustomerBuilder withSurname(String surname) {
         this.surname = surname;
         return this;
     }
@@ -42,7 +42,7 @@ public class CustomerBuilder {
         return birthDate;
     }
 
-    public CustomerBuilder setBirthDate(LocalDate birthDate) {
+    public CustomerBuilder withBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
         return this;
     }
@@ -51,7 +51,7 @@ public class CustomerBuilder {
         return phoneNumber;
     }
 
-    public CustomerBuilder setPhoneNumber(String phoneNumber) {
+    public CustomerBuilder withPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
         return this;
     }
@@ -60,7 +60,7 @@ public class CustomerBuilder {
         return email;
     }
 
-    public CustomerBuilder setEmail(String email) {
+    public CustomerBuilder withEmail(String email) {
         this.email = email;
         return this;
     }

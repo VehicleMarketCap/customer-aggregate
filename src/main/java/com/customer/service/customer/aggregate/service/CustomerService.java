@@ -26,13 +26,15 @@ public class CustomerService {
     }
 
     @Transactional
-    public Customer create(CustomerDto customerDto) {
+    public CustomerDto create(CustomerDto customerDto) {
         Customer customer = customerMapper.fromDtoToEntity(customerDto);
         customerRepository.save(customer);
-        return customer;
+        return customerMapper.fromEntityToDto(customer);
     }
 
-    public List<Customer> getAll() {
-        return customerRepository.findAll();
+    public List<CustomerDto> getAll() {
+        List<Customer> customers = customerRepository.findAll();
+
+        return customerMapper.fromEntitiesToDtos(customers);
     }
 }

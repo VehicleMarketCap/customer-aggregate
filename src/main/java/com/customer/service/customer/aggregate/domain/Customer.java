@@ -1,5 +1,6 @@
 package com.customer.service.customer.aggregate.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.time.LocalDate;
@@ -9,10 +10,14 @@ import java.util.UUID;
 public class Customer {
     @Id
     private final String id;
+    @Column(length = 36)
     private String name;
+    @Column(length = 36)
     private String surname;
     private LocalDate birthdate;
+    @Column(length = 12)
     private String phoneNumber;
+    @Column(length = 12)
     private String email;
 
     public Customer() {
