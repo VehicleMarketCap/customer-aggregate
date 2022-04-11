@@ -14,7 +14,7 @@ public class CustomerDto {
     @NotNull(message = "Name cannot be null")
     @Size(min = 2, max = 36, message = "Name length should be between 2 and 36 characters")
     private String name;
-    @NotNull(message = "Name cannot be null")
+    @NotNull(message = "Surname cannot be null")
     @Size(min = 2, max = 36, message = "Name length should be between 2 and 36 characters")
     private String surname;
     @NotNull(message = "Birthdate cannot be null")
