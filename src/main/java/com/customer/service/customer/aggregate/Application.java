@@ -1,4 +1,4 @@
-package com.customer.service.customeraggregate;
+package com.customer.service.customer.aggregate;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

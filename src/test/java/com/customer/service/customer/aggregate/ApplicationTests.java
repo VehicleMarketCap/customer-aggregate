@@ -1,4 +1,4 @@
-package com.customer.service.customeraggregate;
+package com.customer.service.customer.aggregate;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
